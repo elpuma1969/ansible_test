@@ -6,7 +6,7 @@
 
    tasks:
      - name: Configure mult Vlan
-       ios_config:
+       dellemc.os6.os6_config:
          save_when: modified
          lines:
            - "vlan 75,75,77,78,79,80"
