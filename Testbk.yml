@@ -1,0 +1,19 @@
+---
+- name: Backup Test
+  hosts: dellos6
+  gather_facts: false
+  vars:
+    backup_dir: "/export/local/ansible/from-jose-vm/backup"
+  tasks: 
+  - name: backup
+    dellemc.os6.os6_config:
+      backup: true
+      backup_options:
+        dir_path: "{{ backup_dir }}"
+
+
+
+
+
+
+
