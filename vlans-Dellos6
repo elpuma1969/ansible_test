@@ -1,0 +1,21 @@
+---
+-  name: Backup OSPF
+   gather_facts: no
+   hosts: switches
+   connection: network_cli
+
+   tasks:
+     - name: Configure OSPF
+       dellemc.os6.os6_config:
+         save_when: modified
+         lines:
+           - vlan 10
+           - vlan 20
+           - vlan 30
+         
+
+       register: output
+
+     - name: Priting at the console
+       debug: var=output
+...
