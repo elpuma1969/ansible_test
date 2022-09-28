@@ -1,11 +1,11 @@
 ---
--  name: Backup OSPF
+-  name: Backup vlans
    gather_facts: no
    hosts: switches
    connection: network_cli
 
    tasks:
-     - name: Configure OSPF
+     - name: Configure VLANS
        dellemc.os6.os6_config:
          save_when: modified
          lines:
