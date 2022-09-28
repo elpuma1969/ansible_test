@@ -1,0 +1,14 @@
+--- 
+- 
+  dellemc.os6.os6_config: 
+    lines: 
+      - "clock summer-time recurring USA"
+      - "clock timezone -5 minutes 0"
+      - "sntp unicast client enable"
+      - "sntp server 10.152.84.1"
+    save_when: modified
+  name: "NTP Commands"
+  register: output
+- 
+  debug: var=output
+  name: "Priting at the console"
